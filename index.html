@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arif Pasha | Python Full Stack Developer Trainee</title>
+    <title>Arif Pasha | Python Full Stack Developer</title>
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -411,6 +410,41 @@
             }
         }
 
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid #38bdf8;
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+                padding: 16px 5%;
+            }
+
+            header nav ul {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .projects-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .project-links {
+                flex-wrap: wrap;
+            }
+
+            .btn-project {
+                justify-content: center;
+            }
+        }
+
         /* Footer */
         footer {
             background-color: #0b1329;
@@ -421,6 +455,135 @@
             margin-top: 50px;
             border-top: 1px solid #1e293b;
         }
+
+
+        /* ===== MODERN PORTFOLIO DESIGN UPGRADE ===== */
+        :root {
+            --bg: #07111f;
+            --surface: rgba(18, 32, 54, 0.88);
+            --surface-2: #101e33;
+            --text: #f8fafc;
+            --muted: #b7c4d6;
+            --primary: #38bdf8;
+            --accent: #a78bfa;
+            --border: rgba(148, 163, 184, 0.22);
+        }
+
+        html { scroll-padding-top: 105px; }
+
+        body {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(37, 99, 235, 0.20), transparent 28rem),
+                radial-gradient(circle at 90% 35%, rgba(124, 58, 237, 0.13), transparent 30rem),
+                var(--bg);
+            color: var(--text);
+        }
+
+        header {
+            background: rgba(7, 17, 31, 0.90);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        header > div h1 { letter-spacing: 0.3px; }
+        header nav a { color: #dbeafe; font-size: 14px; font-weight: 600; }
+        header nav a:hover { color: var(--primary); }
+
+        .container { max-width: 1180px; }
+
+        #Home {
+            min-height: 490px;
+            justify-content: center;
+            gap: clamp(28px, 5vw, 64px);
+        }
+
+        .hero-img {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 10px rgba(56, 189, 248, 0.07), 0 18px 55px rgba(37, 99, 235, 0.28);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+        .hero-img:hover { transform: translateY(-5px) scale(1.02); }
+        .hero-content h1 { font-size: clamp(32px, 4vw, 46px); line-height: 1.15; }
+        .hero-content h2 { color: var(--primary); line-height: 1.45; }
+        .hero-content p { color: var(--muted); font-size: 16px; max-width: 650px; }
+
+        .section-title { font-size: clamp(25px, 3vw, 32px); letter-spacing: -0.5px; }
+        .section-title::after {
+            width: 72%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+
+        .card, .skill-box, .project-card, .contact-box {
+            background: linear-gradient(145deg, rgba(20, 37, 62, 0.95), rgba(12, 25, 44, 0.96));
+            border: 1px solid var(--border);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .card, .skill-box, .project-card, .contact-box {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .card:hover, .skill-box:hover, .project-card:hover, .contact-box:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 18px 38px rgba(0, 0, 0, 0.24);
+        }
+        .card h2, .project-body h3 { color: var(--primary); }
+        .card p, #About p { color: var(--muted); }
+        .skill-box h3 { color: #e0f2fe; }
+
+        .tag {
+            border: 1px solid rgba(255,255,255,0.10);
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+        .tag:hover { transform: translateY(-2px); filter: brightness(1.12); }
+
+        .btn-download {
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
+            box-shadow: 0 8px 22px rgba(37, 99, 235, 0.25);
+        }
+        .btn-download:hover {
+            background: linear-gradient(135deg, #1d4ed8, #0284c7);
+            box-shadow: 0 12px 26px rgba(37, 99, 235, 0.34);
+            color: #fff;
+        }
+        .social-btn {
+            background: rgba(30, 42, 68, 0.75);
+            border-color: var(--border);
+        }
+        .social-btn:hover { background: #0ea5e9; color: white; border-color: #0ea5e9; }
+
+        .project-header { background: linear-gradient(135deg, #1d4ed8, #7c3aed); }
+        .project-header i { filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+        .project-body p { line-height: 1.75; }
+        .btn-project { transition: transform 0.2s ease, filter 0.2s ease; }
+        .btn-project:hover { transform: translateY(-2px); filter: brightness(1.12); color: #fff; }
+        .btn-live { background: linear-gradient(135deg, #0f766e, #14b8a6); }
+        .btn-code { background: #25364f; }
+
+        .side-contact-btn, #scrollTopBtn {
+            background: linear-gradient(135deg, #f97316, #ea580c);
+        }
+        .side-contact-btn:hover, #scrollTopBtn:hover { background: linear-gradient(135deg, #ea580c, #c2410c); }
+        footer { background: rgba(4, 10, 20, 0.85); }
+
+        @media (max-width: 768px) {
+            .container { padding: 36px 18px; }
+            #Home { min-height: auto; padding-top: 42px; gap: 28px; text-align: center; }
+            .hero-img { width: 190px; height: 190px; }
+            .hero-content { max-width: 100%; }
+            .hero-content h2 { font-size: 18px; }
+            .social-icons { justify-content: center; }
+            .cards-grid, .skills-grid, .projects-grid { grid-template-columns: minmax(0, 1fr); }
+            .card, .skill-box { padding: 21px; }
+            .contact-box { padding: 26px 18px; }
+            .side-contact-btn { right: 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+        }
+
     </style>
 </head>
 
@@ -459,9 +622,7 @@
             <div class="hero-content">
                 <h1>ARIF PASHA</h1>
                 <h2>Python Full Stack Developer Trainee | B.Com Graduate</h2>
-                <p>Motivated Python Full Stack Developer trainee with hands-on foundational skills in HTML5, CSS3,
-                    JavaScript (DOM & API Fetch), Python, and SQL. Actively building projects to turn concepts into
-                    real-world applications.</p>
+                <p>Motivated Python Full Stack Developer trainee with hands-on skills in HTML5, CSS3, JavaScript, Tailwind CSS, and API integration. Currently learning React.js while building practical projects and strengthening Python and SQL fundamentals.</p>
 
                 <a href="./arifresumeIT.pdf" download class="btn-download">
                     <i class="fa-solid fa-download"></i> Download CV
@@ -471,7 +632,7 @@
 
     <!-- GitHub -->
     <li>
-        <a href="https://github.com/arifpaasha05-create" target="_blank"
+        <a href="https://github.com/arifpaasha05-create" target="_blank" rel="noopener noreferrer"
             class="social-btn" aria-label="GitHub">
             <i class="fa-brands fa-github"></i>
         </a>
@@ -479,7 +640,7 @@
 
     <!-- LinkedIn -->
     <li>
-        <a href="https://www.linkedin.com/in/arif-pasha-python/" target="_blank"
+        <a href="https://www.linkedin.com/in/arif-pasha-python/" target="_blank" rel="noopener noreferrer"
             class="social-btn" aria-label="LinkedIn">
             <i class="fa-brands fa-linkedin"></i>
         </a>
@@ -487,7 +648,7 @@
 
     <!-- Naukri -->
     <li>
-        <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank"
+        <a href="https://www.naukri.com/mnjuser/profile?id=&altresid" target="_blank" rel="noopener noreferrer"
             class="social-btn" aria-label="Naukri">
             <i class="fa-solid fa-briefcase"></i>
         </a>
@@ -502,7 +663,7 @@
     </li>
 
 </ul>
-   
+            </div>
         </section>
 
         <!-- Focus Areas -->
@@ -537,12 +698,9 @@
                     Bengaluru. I am building my career in the IT industry through hands-on learning, assignments
                     and practical projects.
                     <br><br>
-                    I have learned HTML5, CSS3 and JavaScript fundamentals including functions, arrays,
-                    string methods, loops, DOM manipulation and web storage. I am currently learning
-                    JavaScript Events and event handling, including inline events and addEventListener().
+                    I have completed JavaScript fundamentals including functions, arrays, string methods, loops, DOM manipulation, web storage, events, Promises, async/await and Fetch API basics. I have also updated my Meal Finder project using JavaScript, Tailwind CSS and API integration.
                     <br><br>
-                    I am also developing my Python, SQL and OOP fundamentals as part of my Python Full Stack
-                    Development training.
+                    I am continuing to strengthen my Python, SQL and OOP fundamentals as part of my Python Full Stack Development training. I am currently learning React.js.
                     <br><br>
                     I am currently looking for entry-level opportunities where I can learn, contribute and
                     grow as a software developer.
@@ -603,7 +761,9 @@
                         <span class="tag tag-blue">DOM Manipulation</span>
                         <span class="tag tag-blue">Web Storage</span>
                         <span class="tag tag-blue">Events</span>
-                        <span class="tag tag-blue">Fetch API Basics</span>
+                        <span class="tag tag-blue">Fetch API</span>
+                        <span class="tag tag-blue">Promises</span>
+                        <span class="tag tag-blue">Async/Await</span>
                     </div>
                 </div>
 
@@ -614,6 +774,7 @@
                         <span class="tag tag-green">Responsive Design</span>
                         <span class="tag tag-green">Flexbox & Grid</span>
                         <span class="tag tag-green">Bootstrap</span>
+                        <span class="tag tag-green">Tailwind CSS</span>
                     </div>
                 </div>
 
@@ -631,9 +792,10 @@
                 <div class="skill-box">
                     <h3>Currently Learning (In-Progress)</h3>
                     <div class="tag-group">
-                        <span class="tag tag-orange">Django</span>
-                        <span class="tag tag-orange">React.js Basics</span>
-                        <span class="tag tag-orange">REST API Integration</span>
+                        <span class="tag tag-orange">React.js</span>
+                        <span class="tag tag-orange">Components & Props</span>
+                        <span class="tag tag-orange">React Hooks (Learning)</span>
+                        <span class="tag tag-orange">Python & SQL Practice</span>
                     </div>
                 </div>
 
@@ -688,13 +850,39 @@
                             </div>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/arifpaasha05-create/meal-finder" target="_blank"
-                                class="btn-project btn-live">
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i> View Project
-                            </a>
-                            <a href="https://github.com/arifpaasha05-create/meal-finder" target="_blank"
+                            <a href="https://github.com/arifpaasha05-create/meal-finder" target="_blank" rel="noopener noreferrer"
                                 class="btn-project btn-code">
-                                <i class="fa-brands fa-github"></i> GitHub
+                                <i class="fa-brands fa-github"></i> View GitHub Repository
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Updated Meal Finder Project: JavaScript + Tailwind CSS + API -->
+                <div class="project-card">
+                    <div class="project-header" style="background: linear-gradient(135deg, #0f766e, #14b8a6);">
+                        <i class="fa-solid fa-bowl-food"></i>
+                    </div>
+                    <div class="project-body">
+                        <div>
+                            <h3>Meal Finder — JavaScript & Tailwind CSS</h3>
+                            <p>
+                                An updated version of my Meal Finder project using JavaScript, Tailwind CSS and API
+                                integration. This version focuses on dynamically working with meal data and updating
+                                the page through JavaScript, building on my original HTML and CSS project.
+                            </p>
+                            <div class="tag-group" style="margin-bottom: 15px;">
+                                <span class="tag tag-blue">HTML5</span>
+                                <span class="tag tag-green">Tailwind CSS</span>
+                                <span class="tag tag-purple">JavaScript</span>
+                                <span class="tag tag-orange">Fetch API</span>
+                                <span class="tag tag-red">Dynamic DOM</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/arifpaasha05-create/meal-finder-js" target="_blank" rel="noopener noreferrer"
+                                class="btn-project btn-live">
+                                <i class="fa-brands fa-github"></i> View GitHub Repository
                             </a>
                         </div>
                     </div>
